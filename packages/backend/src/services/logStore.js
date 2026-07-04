@@ -17,7 +17,9 @@ function ensureDataDir() {
 function readData() {
   try {
     ensureDataDir()
-    return JSON.parse(fs.readFileSync(LOG_FILE, 'utf-8'))
+    const data = JSON.parse(fs.readFileSync(LOG_FILE, 'utf-8'))
+    if (!Array.isArray(data.logs)) return { logs: [] }
+    return data
   } catch {
     return { logs: [] }
   }

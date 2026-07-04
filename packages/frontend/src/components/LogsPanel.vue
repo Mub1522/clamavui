@@ -12,7 +12,7 @@ async function fetchLogs() {
   try {
     const res = await fetch('/api/logs')
     const data = await res.json()
-    logs.value = data.logs
+    logs.value = data.logs ?? []
   } catch (e) {
     fetchError.value = e.message
   } finally {

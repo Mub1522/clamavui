@@ -85,4 +85,4 @@ If ClamAV was installed with its Windows scheduled task/service, that service ho
 
 ### PM2
 
-`ecosystem.config.cjs` (CommonJS, required by PM2) hardcodes `cwd: 'C:/Users/USUARIO/Desktop/clamav-ui'` and `PORT: 47219`. For a different machine, update `cwd`. The app runs with `NODE_ENV=production` which enables static file serving and disables CORS.
+`ecosystem.config.cjs` (CommonJS, required by PM2) uses `cwd: __dirname` (portable across machines) and hardcodes `PORT: 47219`. The app runs with `NODE_ENV=production` which enables static file serving and disables CORS.

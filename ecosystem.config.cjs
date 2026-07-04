@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'clamav-ui',
       script: 'packages/backend/src/index.js',
-      cwd: 'C:/Users/USUARIO/Desktop/clamav-ui',
+      cwd: __dirname,
       interpreter: 'node',
       env: {
         NODE_ENV: 'production',
